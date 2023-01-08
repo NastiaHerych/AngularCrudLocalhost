@@ -1,0 +1,58 @@
+<h1 mat-dialog-title>Update worker</h1>
+
+<div mat-dialog-content>
+  <form [formGroup]="updateForm" class="add-form">
+    <mat-form-field appearance="fill">
+      <mat-label>First name</mat-label>
+      <input
+        matInput
+        formControlName="firstName"
+        [(ngModel)]="workerData.firstName"
+      />
+      <mat-error>must contain at least 2 symbols</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Last name</mat-label>
+      <input
+        matInput
+        formControlName="lastName"
+        [(ngModel)]="workerData.lastName"
+      />
+      <mat-error>must contain at least 2 symbols</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" [(ngModel)]="workerData.email" />
+      <mat-error>please write a valid email</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Work position</mat-label>
+      <input
+        matInput
+        formControlName="position"
+        [(ngModel)]="workerData.position"
+      />
+      <mat-error>this field is required</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Salary</mat-label>
+      <input
+        matInput
+        formControlName="salary"
+        [(ngModel)]="workerData.salary"
+      />
+      <mat-error>this field is required</mat-error>
+    </mat-form-field>
+
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="!updateForm.valid"
+      (click)="updateWorker()"
+    >
+      Update
+    </button>
+    <button mat-raised-button color="warn" (click)="onNoClick()">Cancel</button>
+  </form>
+</div>

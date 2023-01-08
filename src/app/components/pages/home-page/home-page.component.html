@@ -1,0 +1,50 @@
+<app-header></app-header>
+
+<div class="main">
+  <div class="main__left">
+    <app-primary-button></app-primary-button>
+  </div>
+  <div class="main__right">
+    <div class="wrapper wrapper-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Email</th>
+            <th>Position</th>
+            <th>Salary</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let worker of workerArr">
+            <td>{{ worker.firstName }}</td>
+            <td>{{ worker.lastName }}</td>
+            <td>{{ worker.email }}</td>
+            <td>{{ worker.position }}</td>
+            <td>{{ worker.salary }}</td>
+
+            <td class="table__buttons">
+              <button
+                type="button"
+                class="button button-small"
+                (click)="deleteWorker(worker.workerId)"
+              >
+                Delete
+              </button>
+
+              <button
+                type="button"
+                class="button button-small"
+                (click)="updateWorker(worker)"
+              >
+                Update
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

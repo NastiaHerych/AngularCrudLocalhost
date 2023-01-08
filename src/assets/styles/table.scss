@@ -1,0 +1,45 @@
+.table__buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+table {
+  font-size: 20px;
+  background-color: $white;
+  border-radius: 15px;
+
+  th,
+  td {
+    text-align: center;
+    padding: 10px;
+  }
+
+  tr {
+    &:last-child {
+      padding-bottom: 30px;
+    }
+  }
+
+  th {
+    color: $black;
+    font-weight: 600;
+    width: fit-content;
+
+    // &:first-child {
+    //   width: 200px;
+    // }
+
+    // &:nth-child(2) {
+    //   width: 200px;
+    // }
+
+    // &:nth-child(3) {
+    //   width: 200px;
+    // }
+
+    // &:last-child {
+    //   width: 260px;
+    // }
+  }
+}

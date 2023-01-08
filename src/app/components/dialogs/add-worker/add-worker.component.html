@@ -1,0 +1,54 @@
+<h1 mat-dialog-title>Add worker</h1>
+
+<div mat-dialog-content>
+  <form [formGroup]="addForm" class="add-form">
+    <mat-form-field appearance="fill">
+      <mat-label>First name</mat-label>
+      <input
+        matInput
+        formControlName="firstName"
+        [(ngModel)]="workerObj.firstName"
+      />
+      <mat-error>must contain at least 2 symbols</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Last name</mat-label>
+      <input
+        matInput
+        formControlName="lastName"
+        [(ngModel)]="workerObj.lastName"
+      />
+      <mat-error>must contain at least 2 symbols</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" [(ngModel)]="workerObj.email" />
+      <mat-error>please write a valid email</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Work position</mat-label>
+      <input
+        matInput
+        formControlName="position"
+        [(ngModel)]="workerObj.position"
+      />
+      <mat-error>this field is required</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Salary</mat-label>
+      <input matInput formControlName="salary" [(ngModel)]="workerObj.salary" />
+      <mat-error>this field is required</mat-error>
+    </mat-form-field>
+
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="!addForm.valid"
+      (click)="addWorker(addForm)"
+    >
+      Add
+    </button>
+    <button mat-raised-button color="warn" (click)="onNoClick()">Cancel</button>
+  </form>
+</div>
